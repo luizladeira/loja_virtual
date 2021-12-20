@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: *");
 
 $host = "mysql:host=localhost;dbname=db_catalago";
 $usuario = "root";
-$senha = "luiz2205";
+$senha = "SENHAAQUI";
 
 $conexao = new PDO($host, $usuario, $senha);
 
