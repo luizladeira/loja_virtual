@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start" style="color:white;">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list >
+      <form [formGroup]="editar" (ngSubmit)="editarProduto()">
+        
+        <ion-item>
+          <ion-label position="floating">Nome do Produto</ion-label>
+          <ion-input type="text" name="nome" [(ngModel)]="nome" value="{{nome}}" formControlName="nome"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="floating">Valor</ion-label>
+          <ion-input type="text" name="valor" [(ngModel)]="valor" value="{{valor}}" formControlName="valor"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input type="text" name="descricao" [(ngModel)]="descricao" value="{{descricao}}" formControlName="descricao"></ion-input>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-label position="floating">Quantidade</ion-label>
+          <ion-input type="number" name="qtd" [(ngModel)]="qtd" value="{{qtd}}" formControlName="qtd"></ion-input>
+        </ion-item>
+
+        
+        <div style="margin-top: 40px;">
+          <ion-button type="submit" color="favorite" expand="full">Atualizar</ion-button>
+        </div>
+        
+      </form>
+
+  </ion-list>
+  
+</ion-content>

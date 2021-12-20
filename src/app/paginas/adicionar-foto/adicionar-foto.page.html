@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start" style="color:white;">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="color:white;">Adicionar Foto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+
+    <img [src]="novaFoto" *ngIf="novaFoto != undefined" class="foto-padrao"/>
+    <img [src]="this.serviceUrl.getUrl()+'img_produtos/esgotado.jpg'" class="foto-upload"  *ngIf="novaFoto == undefined"/>
+
+    <!--
+    <img [src]="novaFoto" *ngIf="novaFoto != undefined"/>
+    <img src="../../../assets/img/esgotado.jpg" *ngIf="novaFoto == undefined"/>
+  -->
+
+
+  
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+              <div class="tirarFoto">
+              <ion-col (click)="tirarFoto()" class="tirarFoto">
+                  <ion-icon size="large" name="camera"  style="margin:30%"></ion-icon>
+              </ion-col>
+              </div>
+              <div class="buscarFoto">
+              <ion-col (click)="buscarFoto()" class="buscarFoto">
+                  <ion-icon size="large" name="images"  style="margin:30%"></ion-icon>
+              </ion-col>
+              </div>
+
+            </ion-row>
+
+        </ion-grid>
+        
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expland="full" (click)="salvarFoto()" color="favorite">Salvar</ion-button>
+
+</ion-content>

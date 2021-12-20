@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start" style="color:white;">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:white;">Detalhes Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  
+
+    <ion-card-header style="background:#7D2DCA; ">
+        <ion-card-title style="color:white" >{{this.dados[0].nome}}</ion-card-title>
+    </ion-card-header>
+
+
+      <ion-card>
+        <ion-img [src]="this.serviceUrl.getUrl()+this.dados[0].foto"></ion-img>
+      </ion-card>
+
+      <ion-card-content>
+
+        <div class="card bg-primary text-white text-center p-3">
+          <blockquote class="blockquote mb-0 animated bounceInRight">
+            <p style="font-size: 18px;color:#7D2DCA"> {{this.dados[0].descricao}}</p>
+            
+          </blockquote>
+          <hr class="wave" />
+
+         
+           <span>R$ {{this.dados[0].valor}}</span>
+           
+        
+         
+        </div>
+        
+      </ion-card-content>
+
+   <!--   <ion-content>
+        {{this.dados[0].descricao}}
+        {{this.dados[0].valor}}
+        {{this.dados[0].foto}}
+      </ion-content>
+      
+      
+      {{this.dados[0].nome}}
+      {{this.dados[0].descricao}}
+      {{this.dados[0].valor}}
+      -->    
+
+</ion-content>

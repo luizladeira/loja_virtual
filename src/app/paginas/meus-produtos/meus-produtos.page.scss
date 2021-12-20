@@ -1,0 +1,244 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+ 
+}
+
+.icone-edit{
+  
+  width:30px!important;height:30px!important;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+ 
+}
+
+
+.icone-foto{
+//  margin-left: 5px;
+  width:30px!important;height:30px!important;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+ 
+}
+
+
+.icone-trash{
+  width:30px!important;height:30px!important;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+ion-row .button-editar{ 
+  
+  //border:1px solid; 
+  padding: 5px 5px; 
+  vertical-align: middle; 
+  background:transparent; 
+  border-radius:6px; 
+  margin-bottom:20px;
+  margin-left: 5px;
+  
+}
+
+ion-row .button-foto {
+  //border:1px solid; 
+  padding: 5px 5px; 
+  vertical-align: middle; 
+  background:transparent; 
+  border-radius:6px; 
+  margin-bottom:20px
+}
+
+ 
+ion-row .button-trash{
+  margin-left:5px;
+  //border:1px solid; 
+  padding: 5px 5px; 
+  vertical-align: middle; 
+  background:transparent; 
+  border-radius:6px; 
+  margin-bottom:20px
+
+}
+
+//mexe no icone
+ion-chip{
+border:1px solid!important; 
+padding: 5px 5px!important;
+width: 100%!important; 
+vertical-align: middle!important; 
+
+color:transparent!important;
+//border-radius:6px; 
+font-size: 16px; 
+font-family:helvetica, serif;
+text-decoration:underline;
+
+}
+//fecha mexe no icone
+
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+.ion-color-favorite {
+--ion-color-base: var(--ion-color-favorite);
+--ion-color-base-rgb: var(--ion-color-favorite-rgb);
+--ion-color-contrast: var(--ion-color-favorite-contrast);
+--ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+--ion-color-shade: var(--ion-color-favorite-shade);
+--ion-color-tint: var(--ion-color-favorite-tint);
+}
+
+ion-content{
+  --height: 100%;
+  --min-height:100%;
+  background-position: center top;
+  --background:white;
+}
+
+blockquote {
+  display: block;
+  margin:1%;
+  margin-top:3%;
+ /* margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 1em;
+  margin-inline-end: 1em;
+  */
+  
+}
+
+#separador {
+//border: 1px;
+//border-top: 1px dashed #39004d;
+width:100%;
+margin-top:3%;
+
+}
+
+#separador-buttons{
+  border: 1px;
+  border-top: 1px dashed #39004d;
+  width:100%;
+  margin-top:3%;
+  
+  }
+
+p #hr2 {
+border: 3px;
+border-top: 1px dashed #39004d;
+width:100%;
+}
+
+.wave {
+border:0px;
+position: relative;
+height: 70px;
+width: 100%;
+background: white;
+}
+
+.wave:before {
+content: "";
+display: block;
+position: absolute;
+border-radius: 100% 50%;
+border-style: groove hidden hidden hidden;
+border-color: #ff0000;
+width: 57%;
+height: 80px;
+background-color: white;
+right: 0px;
+top: 40px;
+}
+
+.wave:after {
+content: "";
+display: block;
+position: absolute;
+border-radius: 100% 50%;
+border-style: hidden hidden groove hidden;
+border-color: #ff0000;
+width: 50%;
+height: 70px;
+background-color: white;
+left: 0;
+top: 27px;
+}
+
+.tooltip {
+position: relative;
+display: inline-block;
+margin-left:80%;
+// border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: #555;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+content: "";
+position: absolute;
+top: 100%;
+margin: 5px;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+opacity: 1;
+}

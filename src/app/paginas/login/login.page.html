@@ -1,0 +1,39 @@
+<ion-content class="fundo">
+  
+    <div class="conteudo animated bounceInRight">
+      <ion-img src="../../../assets/gifs/login1.gif" class="img"></ion-img>
+    </div>
+
+    <ion-item class="login animated bounceInLeft"> 
+
+    <ion-label position="floating" class="titulo">Login</ion-label>
+      <ion-input type="text" [(ngModel)]="email" class="input"></ion-input>
+    </ion-item>
+
+    <ion-item class="login animated bounceInRight">
+      <ion-label position="floating" class="titulo">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha" class="input"></ion-input>
+    </ion-item>
+    
+    <div>
+    <div>
+      <ion-button class="login animated bounceInLeft" expand="block" fill="solid" color="primary" 
+      (click)="logar()" style="float: right">
+        <ion-icon slot="icon-only" name="lock-closed-outline"></ion-icon>
+        Logar
+      </ion-button>    
+    </div>
+
+    <div>
+      <ion-button expand="block" fill="solid" color="success" style="float: center">
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+          Novo
+      </ion-button>    
+    </div>
+    
+  </div>
+ 
+  
+    
+
+</ion-content>

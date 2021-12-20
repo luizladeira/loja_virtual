@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start" style="color:white;">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="color:white;">Novo Usuário</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  
+  <ion-list>
+      <form [formGroup]="criar" (ngSubmit)="criarUsuario()">
+
+        
+
+        <img [src]="novaFoto" *ngIf="novaFoto != undefined" style="width: 90%"/>
+        <img [src]="this.serviceUrl.getUrl()+'img_perfil/usuario_padrao.png'" style="width: 95%" *ngIf="novaFoto == undefined"/>
+
+      <div>
+        <div class="tirarFoto">
+          <ion-col (click)="tirarFoto()">
+            <ion-icon size="large" name="camera" style="margin:30%"></ion-icon>
+          </ion-col>
+        </div>
+    
+        <div class="buscarFoto">
+          <ion-col (click)="buscarFoto()">
+            <ion-icon size="large" name="images" style="margin:30%"></ion-icon>
+        </ion-col>
+        </div>
+        
+      </div>
+      
+
+        <ion-item>
+          <ion-label class="label" position="floating">Nome </ion-label>
+          <ion-input type="text" name="nome"  [(ngModel)]="nome" formControlName="nome"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label class="label" position="floating">Email </ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="email" formControlName="email"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label class="label" position="floating">Senha</ion-label>
+          <ion-input type="password" name="senha_usuario" [(ngModel)]="senha_usuario" formControlName="senha_usuario"></ion-input>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-label class="label" position="floating">Nivel</ion-label>
+          <ion-input type="number" name="nivel" [(ngModel)]="nivel" formControlName="nivel"></ion-input>
+        </ion-item>
+
+        
+        <div style="margin-top: 10px;">
+          <ion-button type="submit" expand="full" color="favorite">Gravar</ion-button>
+         
+        </div>
+        
+      </form>
+
+  </ion-list>
+  
+</ion-content>
+

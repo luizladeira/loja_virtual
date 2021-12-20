@@ -1,0 +1,69 @@
+/*
+ion-content{
+    --height: 100%;
+    --min-height:100%;
+    background-position: center top;
+    --background: #CDD1D3;
+    margin:30%!important;
+}
+
+ion-list{
+margin-top:10%;
+}
+*/
+
+ion-content{
+    --height: 100%;
+    --min-height:100%;
+    background-position: center top;
+    --background: white;
+    margin:50%!important;
+    
+}
+
+ion-list{
+ // background:#7D2DCA; 
+  box-shadow: 0 4px 8px 0 #7D2DCA;
+  transition: 0.3s;
+  width: 94%;
+  margin-left:3%;
+  margin-right:3%;
+  border-radius: 5px;
+  margin-top: 33px;
+}
+
+.label{
+  color:#7D2DCA;
+  font-size:0.9em;
+}
+
+ion-button{
+width:80%;
+margin-left:10%;
+margin-right:10%;
+margin-top: 3%;
+margin-bottom: 3%;
+}
+ 
+.ion-color-favorite {
+    --ion-color-base: var(--ion-color-favorite);
+    --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+    --ion-color-contrast: var(--ion-color-favorite-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+    --ion-color-shade: var(--ion-color-favorite-shade);
+    --ion-color-tint: var(--ion-color-favorite-tint);
+  }
+  
+  ion-input{
+    border-radius: 10px !important;
+    padding-right: 30px;
+    font-size: 0.9em;
+    /* height: 10%; */
+    /* width: 41%; */
+    max-width: 50vw; // this is applying perfectly
+    max-height: 10vh;
+}
+
+.item-has-focus{
+  --highlight-background: #7D2DCA;
+}

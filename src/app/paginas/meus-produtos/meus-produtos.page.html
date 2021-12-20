@@ -1,0 +1,89 @@
+<ion-header [translucent]="true" color="favorite">
+  <ion-toolbar color="favorite"> 
+    <ion-buttons slot="start" style="color:#00E278;">
+      <ion-menu-button style="background:white" defaultHref="/home"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Meus Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>    
+  
+  <ion-card *ngFor="let produto of produtoItem"  class="animated swing">
+          
+             
+         <ion-card-header style="background:#7D2DCA; ">
+          <ion-card-title style="color:white" >{{produto.nome}}</ion-card-title>
+          </ion-card-header>
+
+          <a href="list-produtos/{{produto.codigo}}" class="titulo">
+            <ion-img [src]="this.serviceUrl.getUrl()+produto.foto"></ion-img>
+          </a>
+          
+          <ion-card-content>
+            <div id="separador"></div>
+            <div class="card bg-primary text-white text-center p-3">
+              <blockquote class="blockquote mb-0 animated bounceInRight">
+                <p style="font-size: 18px;color:#7D2DCA"> {{produto.descricao}}</p>
+                
+              </blockquote>
+              <div id="separador"></div>
+              <hr class="wave" />
+
+             
+                <div class="tooltip" sytle="float:right">
+                  <ion-img src="../../../assets/gifs/cifrao.png" class="img " alt="Clique Aqui" title="Clique Aqui"></ion-img>
+                  <span class="tooltiptext">R$ {{produto.valor}}</span>
+                </div>
+            
+             
+            </div>
+            
+          </ion-card-content>
+          
+          <ion-row *ngIf="produto.idUserProduto == serviceUser.idUser">
+            <div id="separador-buttons"></div>
+            <p class="hr2" ></p>
+            <ion-col class="button-editar animated bounceInRight">
+                <ion-chip color="primary" (click)="adicionarFoto(produto)">
+              <ion-icon class="icone-foto" name="images" color="primary">
+                <ion-label>Foto</ion-label>
+              </ion-icon>
+            </ion-chip>
+          </ion-col>
+     
+
+            <ion-col class="button-editar animated bounceInRight">
+                   <ion-chip color="primary" (click)="editarProduto(produto)">
+                  <ion-icon class="icone-edit" name="create" color="primary">
+                    <ion-label>Editar</ion-label>
+                  </ion-icon>
+                </ion-chip>
+            </ion-col>
+          
+            <ion-col class="button-trash animated bounceInRight">
+              <ion-chip color="primary">
+                  <ion-icon class="icone-trash" name="trash" color="danger" (click)="deleteProduto(produto)">
+                    <ion-label>Excluir</ion-label>
+                  </ion-icon>
+                </ion-chip>
+            </ion-col>
+
+          </ion-row>
+</ion-card>
+     
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="favorite" (click)="toProdutos()">
+    <ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+        
+        
+</ion-content>

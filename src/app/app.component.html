@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+
+          <ion-item>
+            <ion-avatar>
+              <ion-img [src]="serviceUrl.getUrl()+serviceUser.getUserFoto()"></ion-img>
+            </ion-avatar>
+            <ion-label style="margin-left:5%;color:white">{{serviceUser.getUserNome()}}</ion-label>
+          </ion-item>
+
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let menu of menuService.perfilMenu;">
+            <ion-item routerDirection="root" (click)="acaoMenu(menu.acao)">
+              <ion-icon slot="start" [name]="menu.icone"></ion-icon>
+              <ion-label style="color:white;">{{ menu.label }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-button style="background:#00E278" expand="full" (click)="deslogar()">
+            Sair
+          </ion-button>
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start" style="color:white;">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:white;">Listar Usuários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>    
+  
+  <ion-card *ngFor="let usuarios of usuarioItem">
+          
+
+    <ion-grid class="listUsuarios">
+      <ion-row class="ion-justify-content-start">
+        <ion-col size="3">
+          <div>
+            <ion-img class="image" [src]="this.serviceUrl.getUrl()+usuarios.foto"></ion-img>
+          </div>
+        </ion-col>
+        <ion-col size="9">
+          <div style="margin-top:5%;margin-bottom: 5%;">
+           <label class="listUsuariosLabel">Nome: {{usuarios.nome}}</label> 
+          </div>
+           <div>
+           <label class="listUsuariosLabel">E-mail: {{usuarios.email}}</label> 
+          </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-row>
+
+        <ion-col style="display: flex;align-items: center; justify-content: center">
+               <ion-chip color="primary" (click)="editarUsuario(usuarios)">
+              <ion-icon name="create" class="editar" color="primary">
+                <ion-label>Editar</ion-label>
+              </ion-icon>
+            </ion-chip>
+        </ion-col>
+      
+        <ion-col>
+          <ion-chip style="display: flex;align-items: center; justify-content: center">
+              <ion-icon name="trash" color="danger" (click)="deleteUsuario(usuarios)">
+                <ion-label>Excluir</ion-label>
+              </ion-icon>
+            </ion-chip>
+        </ion-col>
+
+      </ion-row>
+
+</ion-card>
+     
+
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="favorite" (click)="toUsuarios()">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+        
+        
+</ion-content>
